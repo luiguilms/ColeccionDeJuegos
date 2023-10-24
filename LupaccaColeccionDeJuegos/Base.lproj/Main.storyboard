@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" id="Oin-JV-3kR">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1fg-dW-gIh">
                             <connections>
-                                <segue destination="2WW-rD-Qom" kind="show" id="PxA-UP-xdb"/>
+                                <segue destination="2WW-rD-Qom" kind="show" identifier="juegoSegue" id="PxA-UP-xdb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -67,24 +67,41 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbT-MU-R4d">
-                                <rect key="frame" x="169.5" y="344" width="75.5" height="31"/>
+                                <rect key="frame" x="169.5" y="605" width="75.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Agregar"/>
                                 <connections>
                                     <action selector="agregarTapped:" destination="2WW-rD-Qom" eventType="touchUpInside" id="5f8-eL-Dgc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46q-Yn-m93">
+                                <rect key="frame" x="169" y="651" width="76" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Eliminar"/>
+                                <connections>
+                                    <action selector="eliminarTapped:" destination="2WW-rD-Qom" eventType="touchUpInside" id="Gwf-Ya-bGa"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="py6-tk-Vo0">
+                                <rect key="frame" x="0.0" y="359" width="414" height="216"/>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UNL-Ux-VIr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="46q-Yn-m93" firstAttribute="top" secondItem="YbT-MU-R4d" secondAttribute="bottom" constant="15" id="3BJ-gY-I82"/>
                             <constraint firstItem="voq-GK-mkA" firstAttribute="width" secondItem="uvM-vr-nGh" secondAttribute="width" multiplier="0.346429" id="8U7-MJ-qzR"/>
+                            <constraint firstItem="py6-tk-Vo0" firstAttribute="centerX" secondItem="voq-GK-mkA" secondAttribute="centerX" id="8rA-zp-8j0"/>
                             <constraint firstItem="uvM-vr-nGh" firstAttribute="top" secondItem="UNL-Ux-VIr" secondAttribute="top" constant="32" id="9Tl-Z4-4kH"/>
+                            <constraint firstItem="YbT-MU-R4d" firstAttribute="top" secondItem="py6-tk-Vo0" secondAttribute="bottom" constant="30" id="EWx-j1-2Kt"/>
                             <constraint firstItem="voq-GK-mkA" firstAttribute="centerX" secondItem="uvM-vr-nGh" secondAttribute="centerX" id="GDB-0b-Tcp"/>
-                            <constraint firstItem="YbT-MU-R4d" firstAttribute="top" secondItem="voq-GK-mkA" secondAttribute="bottom" constant="20" id="Zcg-hJ-k6s"/>
+                            <constraint firstItem="46q-Yn-m93" firstAttribute="centerX" secondItem="YbT-MU-R4d" secondAttribute="centerX" id="Z9C-ki-vi6"/>
                             <constraint firstItem="uvM-vr-nGh" firstAttribute="centerX" secondItem="tqX-Lg-4On" secondAttribute="centerX" id="anj-Hy-Djm"/>
+                            <constraint firstItem="py6-tk-Vo0" firstAttribute="leading" secondItem="UNL-Ux-VIr" secondAttribute="leading" id="btZ-b5-v2R"/>
                             <constraint firstItem="YbT-MU-R4d" firstAttribute="centerX" secondItem="voq-GK-mkA" secondAttribute="centerX" id="g42-r8-HPK"/>
+                            <constraint firstItem="py6-tk-Vo0" firstAttribute="top" secondItem="voq-GK-mkA" secondAttribute="bottom" constant="35" id="grt-YT-lct"/>
                             <constraint firstItem="voq-GK-mkA" firstAttribute="top" secondItem="uvM-vr-nGh" secondAttribute="bottom" constant="20" id="hGo-pr-gVa"/>
+                            <constraint firstItem="py6-tk-Vo0" firstAttribute="trailing" secondItem="UNL-Ux-VIr" secondAttribute="trailing" id="nnq-ef-0TJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="M8d-VF-Efu">
@@ -103,6 +120,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="JuegoImageView" destination="uvM-vr-nGh" id="Ih3-WF-rS6"/>
+                        <outlet property="agregarActualizarBoton" destination="YbT-MU-R4d" id="2BW-DS-GTQ"/>
+                        <outlet property="categoriaPicker" destination="py6-tk-Vo0" id="c8T-14-i80"/>
+                        <outlet property="eliminarBoton" destination="46q-Yn-m93" id="2m9-Mg-RVK"/>
                         <outlet property="tituloTextField" destination="voq-GK-mkA" id="VfA-2M-Cup"/>
                     </connections>
                 </viewController>
